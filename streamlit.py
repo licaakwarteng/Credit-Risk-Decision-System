@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 
 #loading model which was saved
-loaded_model = pickle.load(open('C:/Users/naaod/Downloads/loan_payback_analysis/trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('C:/Users/naaod/Downloads/loan_payback_analysis/Credit-Risk-Decision-System/trained_model.sav', 'rb'))
 
 # making predictions
 def loan_default_prediction(input_data):
