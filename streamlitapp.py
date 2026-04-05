@@ -5,17 +5,20 @@ import pandas as pd
 import streamlit as st
 
 #loading model which was saved
-with open('trained_model.pkl', 'rb') as file:
-    loaded_model = pickle.load(file)
+try:
+    with open('trained_model.pkl', 'rb') as file:
+        loaded_model = pickle.load(file)
+except Exception as e:
+    print("Error loading model:", e)
 
 # making predictions
 def loan_default_prediction(input_data):
 
     #load my input data
     input_data = pd.to_numeric(input_data)
-    input_data_reshaped = input_data.reshape(1, -1)
+    input_data = input_data.reshape(1, -1)
 
-    prediction = loaded_model.predict(input_data_reshaped)
+    prediction = loaded_model.predict(input_data)
     if prediction[0] == 0:
         return 'Less likely to default'
     else:
