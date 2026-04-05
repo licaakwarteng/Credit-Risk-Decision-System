@@ -46,13 +46,13 @@ def main():
     application_type_joint = st.text_input('Application Type: Joint. Yes: 1 No: 0', key='application_type_joint')
 
     #prediction variable
-    prediction = ''
+    prediction_string = ''
 
     #predicting loan default    
     if st.button('Loan Default Test Result'):
-        prediction = loan_default_prediction([income_per_credit_line,loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,term,num_total_cc_accounts,months_since_last_credit_inquiry,num_open_cc_accounts,open_credit_lines,num_satisfactory_accounts,loan_amount,application_type_joint])
+        prediction_string = loan_default_prediction([income_per_credit_line,loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,term,num_total_cc_accounts,months_since_last_credit_inquiry,num_open_cc_accounts,open_credit_lines,num_satisfactory_accounts,loan_amount,application_type_joint])
 
-    st.success(prediction)
+    st.success(prediction_string)
 
 
 
