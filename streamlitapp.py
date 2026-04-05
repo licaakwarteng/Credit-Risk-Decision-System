@@ -8,7 +8,7 @@ import streamlit as st
 loaded_model = None
 
 try:
-    with open('C:/Users/naaod/Downloads/loan_payback_analysis/Credit-Risk-Decision-System/trained_model.pkl', 'rb') as file:
+    with open('trained_model.pkl', 'rb') as file:
         loaded_model = pickle.load(file)
 except Exception as e:
     st.error(f"Error loading model: {e}")
