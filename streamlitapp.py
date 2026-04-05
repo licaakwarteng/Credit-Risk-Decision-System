@@ -19,6 +19,7 @@ def loan_default_prediction(input_data):
     input_data = input_data.reshape(1, -1)
 
     prediction = loaded_model.predict(input_data)
+    print(prediction)
     if prediction[0] == 0:
         return 'Less likely to default'
     else:
