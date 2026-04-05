@@ -67,14 +67,14 @@ def main():
                 numeric_inputs = [float(i) for i in inputs]
 
                 prediction_string = loan_default_prediction(numeric_inputs)
-                st.success(prediction_string)
+                # st.success(prediction_string)
 
             except:
                 st.error("Enter valid numbers")
 
                 
 
-    # st.success(prediction_string)
+    st.success(prediction_string)
 
 
 
