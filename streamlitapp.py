@@ -1,12 +1,15 @@
 import numpy as np
-from sklearn.linear_model import LogisticRegression
+# from sklearn.linear_model import LogisticRegression
 import pickle
 import pandas as pd
 import streamlit as st
 
 #loading model which was saved
-with open('trained_model.pkl', 'rb') as file:
-    loaded_model = pickle.load(file)
+try:
+    with open('trained_model.sav', 'rb') as file:
+        loaded_model = pickle.load(file)
+except Exception as e:
+    print("Error loading model:", e)
 
 # making predictions
 def loan_default_prediction(input_data):
