@@ -5,11 +5,8 @@ import pandas as pd
 import streamlit as st
 
 #loading model which was saved
-try:
-    with open('trained_model.pkl', 'rb') as file:
-        loaded_model = pickle.load(file)
-except Exception as e:
-    print("Error loading model:", e)
+with open('trained_model.pkl', 'rb') as file:
+    loaded_model = pickle.load(file)
 
 # making predictions
 def loan_default_prediction(input_data):
