@@ -43,7 +43,7 @@ def main():
     open_credit_lines = st.text_input('Number of open credit lines', key='open_credit_lines')
     num_satisfactory_accounts = st.text_input('Number of satisfactory accounts', key='num_satisfactory_accounts')
     loan_amount = st.text_input('Loan amount', key='loan_amount')
-    application_type_joint = st.text_input('Application Type: Individual/ Joint. Yes: 1 No: 0', key='application_type_joint')
+    application_type_joint = st.text_input('Application Type: Joint. Yes: 1 No: 0', key='application_type_joint')
 
     #prediction variable
     prediction = ''
