@@ -6,7 +6,7 @@ import streamlit as st
 
 #loading model which was saved
 try:
-    with open('trained_model.pkl', 'rb') as file:
+    with open('C:/Users/naaod/Downloads/loan_payback_analysis/Credit-Risk-Decision-System/trained_model.pkl', 'rb') as file:
         loaded_model = pickle.load(file)
 except Exception as e:
     print("Error loading model:", e)
@@ -20,6 +20,7 @@ def loan_default_prediction(input_data):
 
     prediction = loaded_model.predict(input_data)
     print(prediction)
+
     if prediction[0] == 0:
         return 'Less likely to default'
     else:
