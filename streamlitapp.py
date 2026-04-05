@@ -34,7 +34,7 @@ def main():
     # load my input data
 
     income_per_credit_line = st.text_input('Income per credit line', key='income_per_credit_line')
-    loan_purpose_house = st.text_input('Loan purpose if house. Yes: 1 No: 0', key='Enter 1 if yes else 0')
+    loan_purpose_house = st.text_input('Loan purpose if house. Yes: 1 No: 0', key='loan_purpose_house')
     loan_purpose_credit_card = st.text_input('Loan purpose if credit card. Yes: 1 No: 0', key='loan_purpose_credit_card')
     inquiries_last_12m = st.text_input('Inquiries made in the last 12 months', key='inquiries_last_12m')
     term = st.text_input('Loan term', key='term')
