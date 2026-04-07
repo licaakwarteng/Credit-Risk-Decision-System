@@ -18,7 +18,7 @@ def loan_default_prediction(input_data):
         return "Model not loaded. Check your .pkl file."
 
     #load my input data
-    input_data = pd.Series(input_data)
+    # input_data = pd.Series(input_data)
     input_data = pd.to_numeric(input_data)
     input_data = input_data.reshape(1, -1)
 
