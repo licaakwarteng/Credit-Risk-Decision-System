@@ -12,23 +12,32 @@ try:
 except Exception as e:
     st.error(f"Error loading model: {e}")
 
+
+try:
+    with open('scaler_pickled.pkl', 'rb') as scaled_file:
+        loaded_scaler = pickle.load(scaled_file)
+except Exception as se:
+    st.error(f"Error loading scaler: {se}")
+
 # making predictions
 def loan_default_prediction(input_data):
     if loaded_model is None:
         return "Model not loaded. Check your .pkl file."
 
     #load my input data
-    # input_data = pd.Series(input_data)
     input_data = pd.to_numeric(input_data)
     input_data = input_data.reshape(1, -1)
 
-    prediction = loaded_model.predict(input_data)
+    #scaling my input_data
+    scaled_input_data = loaded_scaler.transform(input_data)
+
+    prediction = loaded_model.predict(scaled_input_data)
     print(prediction)
 
     if prediction[0] == 0:
-        return 'Less likely to default'
-    else:
         return 'Likely to default'
+    else:
+        return 'Less likely to default'
 
 
 
