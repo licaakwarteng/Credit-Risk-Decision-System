@@ -48,9 +48,9 @@ def main():
     # load my input data
     loan_purpose_house = st.text_input('Loan purpose if house. Yes: 1 No: 0', key='loan_purpose_house')
     loan_purpose_credit_card = st.text_input('Loan purpose if credit card. Yes: 1 No: 0', key='loan_purpose_credit_card')
-    inquiries_last_12m = st.text_input('Inquiries made in the last 12 months', key='inquiries_last_12m', min_value=0)
+    inquiries_last_12m = st.text_input('Inquiries made in the last 12 months', key='inquiries_last_12m')
     num_total_cc_accounts = st.text_input('Number of current accounts', key='num_total_cc_accounts')
-    loan_amount = st.text_input('Loan amount', key='loan_amount', min_value=0.0)
+    loan_amount = st.text_input('Loan amount', key='loan_amount')
     application_type_joint = st.text_input('Application Type: Joint. Yes: 1 No: 0', key='application_type_joint')
 
     #prediction variable
