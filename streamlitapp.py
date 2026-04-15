@@ -34,7 +34,7 @@ def loan_default_prediction(input_data):
     prediction = loaded_model.predict(scaled_input_data)
     print(prediction)
 
-    if prediction[0] == 0:
+    if prediction == 0:
         return 'Likely to default'
     else:
         return 'Less likely to default'
@@ -46,17 +46,11 @@ def main():
     st.title('Credit Risk Decision System App')
     
     # load my input data
-
-    income_per_credit_line = st.text_input('Income per credit line', key='income_per_credit_line')
+    
     loan_purpose_house = st.text_input('Loan purpose if house. Yes: 1 No: 0', key='loan_purpose_house')
     loan_purpose_credit_card = st.text_input('Loan purpose if credit card. Yes: 1 No: 0', key='loan_purpose_credit_card')
     inquiries_last_12m = st.text_input('Inquiries made in the last 12 months', key='inquiries_last_12m')
-    term = st.text_input('Loan term', key='term')
     num_total_cc_accounts = st.text_input('Number of current accounts', key='num_total_cc_accounts')
-    months_since_last_credit_inquiry = st.text_input('Months since last credit inquiry', key='months_since_last_credit_inquiry')
-    num_open_cc_accounts = st.text_input('Number of open accounts', key='num_open_cc_accounts')
-    open_credit_lines = st.text_input('Number of open credit lines', key='open_credit_lines')
-    num_satisfactory_accounts = st.text_input('Number of satisfactory accounts', key='num_satisfactory_accounts')
     loan_amount = st.text_input('Loan amount', key='loan_amount')
     application_type_joint = st.text_input('Application Type: Joint. Yes: 1 No: 0', key='application_type_joint')
 
@@ -65,7 +59,7 @@ def main():
 
     #predicting loan default    
     if st.button('Loan Default Test Result'):
-        inputs = [income_per_credit_line,loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,term,num_total_cc_accounts,months_since_last_credit_inquiry,num_open_cc_accounts,open_credit_lines,num_satisfactory_accounts,loan_amount,application_type_joint]
+        inputs = [loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,num_total_cc_accounts,loan_amount,application_type_joint]
 
         if "" in inputs:
             st.error("Fill all fields")
