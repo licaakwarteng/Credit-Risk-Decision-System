@@ -32,7 +32,7 @@ def loan_default_prediction(input_data):
     input_data = np.array(input_data).reshape(1, -1)
 
     pred = model.predict(input_data)[0]
-    prob = model.predict_proba(input_data)[0]
+    prob = model.predict_proba(input_data)[:, 1]
 
     if pred == 0:
         return f"Likely to default (Risk: {prob[0]:.1%})"
