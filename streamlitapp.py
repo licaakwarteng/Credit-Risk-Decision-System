@@ -51,6 +51,7 @@ def main():
     inquiries_last_12m = st.text_input('Inquiries made in the last 12 months', key='inquiries_last_12m')
     num_total_cc_accounts = st.text_input('Number of current accounts', key='num_total_cc_accounts')
     loan_amount = st.text_input('Loan amount', key='loan_amount')
+    term = st.text_input('Loan term 36 or 60.', key='term')
     application_type_joint = st.text_input('Application Type: Joint. Yes: 1 No: 0', key='application_type_joint')
 
     #prediction variable
@@ -58,7 +59,7 @@ def main():
 
     #predicting loan default    
     if st.button('Loan Default Test Result'):
-        inputs = [loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,num_total_cc_accounts,loan_amount,application_type_joint]
+        inputs = [loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,num_total_cc_accounts,loan_amount,term, application_type_joint]
 
         if "" in inputs:
             st.error("Fill all fields")
