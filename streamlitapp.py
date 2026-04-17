@@ -23,6 +23,14 @@ def load_model():
 
 model = load_model()
 
+def load_scaler():
+    try:
+        return joblib.load('scaler.pkl')
+    except Exception:
+        return None
+    
+scaler = load_scaler()
+
 
 # making predictions
 def loan_default_prediction(input_data):
@@ -30,6 +38,7 @@ def loan_default_prediction(input_data):
         return "Model not loaded"
 
     input_data = np.array(input_data).reshape(1, -1)
+    input_data = scaler.transform(input_data)
 
     pred = model.predict(input_data)
     prob = model.predict_proba(input_data)[:]
