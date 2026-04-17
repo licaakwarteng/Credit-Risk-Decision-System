@@ -14,7 +14,7 @@ import joblib
 #     st.error(f"Error loading model: {e}")
 
 # loading model
-@st.cache_resource
+# @st.cache_resource
 def load_model():
     try:
         return joblib.load('trained_model.pkl')
