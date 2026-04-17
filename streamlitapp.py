@@ -35,9 +35,9 @@ def loan_default_prediction(input_data):
     prob = model.predict_proba(input_data)[:]
 
     if pred == 0:
-        return f"Likely to default (Risk: {prob[:, 0]:.1%})"
+        return f"Likely to default (Risk: {prob[:, 0]})"
     else:
-        return f"Less likely to default (Safe: {prob[:, 1]:.1%})"
+        return f"Less likely to default (Safe: {prob[:, 1]})"
 
 
 
