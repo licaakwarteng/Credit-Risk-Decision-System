@@ -68,7 +68,7 @@ def main():
 
     #predicting loan default    
     if st.button('Loan Default Test Result'):
-        inputs = [loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,num_total_cc_accounts,loan_amount,term, application_type_joint]
+        inputs = [loan_purpose_house,loan_purpose_credit_card,inquiries_last_12m,num_total_cc_accounts,loan_amount, term, application_type_joint]
 
         if "" in inputs:
             st.error("Fill all fields")
